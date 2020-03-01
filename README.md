@@ -1,6 +1,6 @@
 # Rust Sandbox
 
-Trying out and learning Rust by via:
+Trying out and learning Rust via:
 
 - [The Rust Book](https://doc.rust-lang.org/book/)
 - [A half hour to learn Rust](https://fasterthanli.me/blog/2020/a-half-hour-to-learn-rust/)
