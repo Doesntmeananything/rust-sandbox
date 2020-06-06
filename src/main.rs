@@ -1,33 +1,25 @@
-use rand::Rng;
-use std::cmp::Ordering;
-use std::io::stdin;
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
 
 fn main() {
-  println!("Guess the number!");
-
-  let secret_number = rand::thread_rng().gen_range(1, 101);
-
-  loop {
-    println!("Please input your guess.");
-
-    let mut guess = String::new();
-
-    stdin().read_line(&mut guess).expect("Failed to read line");
-
-    let guess: u32 = match guess.trim().parse() {
-      Ok(num) => num,
-      Err(_) => continue,
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
     };
 
-    println!("You guessed: {}", guess);
+    println!("rect1 is {:?}", rect1);
 
-    match guess.cmp(&secret_number) {
-      Ordering::Less => println!("Too small!"),
-      Ordering::Greater => println!("Too big!"),
-      Ordering::Equal => {
-        println!("You win!");
-        break;
-      }
-    }
-  }
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        rect1.area()
+    );
 }
